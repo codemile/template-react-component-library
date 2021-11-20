@@ -1,18 +1,22 @@
 {
   "name": "@YOUR_GITHUB_USERNAME/YOUR_REPOSITORY_NAME",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/YOUR_REPOSITORY_NAME"
-  },
   "version": "0.1.0",
   "description": "A simple template for a custom React component library",
-  "scripts": {
-    "rollup": "rollup -c",
-    "test": "jest",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
-  },
-  "author": "YOUR_NAME",
   "license": "ISC",
+  "author": "YOUR_NAME",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "build:storybook": "build-storybook",
+    "dev": "yarn storybook",
+    "storybook": "start-storybook -p 6006",
+    "test": "jest"
+  },
   "devDependencies": {
     "@babel/core": "^7.16.0",
     "@babel/preset-env": "^7.16.4",
@@ -39,10 +43,7 @@
     "rollup-plugin-postcss": "^4.0.1",
     "typescript": "^4.4.4"
   },
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
-  "files": [
-    "dist"
-  ],
-  "types": "dist/index.d.ts"
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/YOUR_REPOSITORY_NAME"
+  }
 }
